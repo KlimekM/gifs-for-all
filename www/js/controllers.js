@@ -16,7 +16,7 @@ angular.module("gifs.controllers", [])
   $scope.loadMoreGifs = function() {
     Gifs.loadMoreGifs().then(function(){
     $scope.gifs = Gifs.data;
-    $scope.$broadcast('scroll.infiniteScrollComplete');
+    $scope.$broadcast("scroll.infiniteScrollComplete");
     })
   }
 })

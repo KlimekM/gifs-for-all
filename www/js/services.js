@@ -10,9 +10,9 @@ angular.module("gifs.services", [])
     return $http({
       method: "GET",
       url: "http://api.giphy.com/v1/gifs/search?q=" + o.searchTerm + "&limit=100&api_key=dc6zaTOxFJmzC"
-    }).success(function(response) {
-      console.log(response.data)
-      o.data = response.data;
+    }).success(function(responseData) {
+      console.log(responseData.data)
+      o.data = responseData.data;
     });
   }
 
@@ -20,8 +20,8 @@ angular.module("gifs.services", [])
     return $http({
       method: "GET",
       url: "http://api.giphy.com/v1/gifs/search?q=" + o.searchTerm + "&limit=100&offset=" + o.data.length + "&api_key=dc6zaTOxFJmzC"
-    }).success(function(response) {
-      o.data = o.data.concat(response.data);
+    }).success(function(responseData) {
+      o.data = o.data.concat(responseData.data);
     });
   }
 
@@ -37,8 +37,8 @@ angular.module("gifs.services", [])
     return $http({
       method: "GET",
       url: "http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC"
-    }).success(function(response) {
-      o.data = response.data;
+    }).success(function(responseData) {
+      o.data = responseData.data;
     });
   }
 
