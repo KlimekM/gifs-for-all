@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module("gifs.controllers", [])
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,4 +8,6 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-.controller('GifCtrl', function($scope) {})
+.controller("GifCtrl", function($scope) {})
+
+.controller("TrendingCtrl", function($scope) {})
