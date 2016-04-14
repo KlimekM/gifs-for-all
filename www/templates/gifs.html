@@ -1,8 +1,8 @@
 <ion-view view-title="Unicorn Gifs">
 	<ion-content>
 		<ion-list>
-			<ion-item>
-				<h2>HELLO WORLD!</h2>
+			<ion-item ng-repeat="gif in gifs">
+				<img ng-src="{{ gif.images.fixed_height_small.url }}">
 			</ion-item>
 		</ion-list>
   </ion-content>

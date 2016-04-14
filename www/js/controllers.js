@@ -8,6 +8,11 @@ angular.module("gifs.controllers", [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-.controller("GifCtrl", function($scope) {})
+.controller("GifCtrl", function($scope, Gifs) {
+  Gifs.populateGifs().then(function(){
+    $scope.gifs = Gifs.data.data;
+    console.log($scope.gifs.data);
+  })
+})
 
-.controller("TrendingCtrl", function($scope) {})
+.controller("TrendingCtrl", function($scope) {});
