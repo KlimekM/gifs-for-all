@@ -10,13 +10,19 @@ angular.module("gifs.controllers", [])
 
 .controller("GifCtrl", function($scope, Gifs) {
   Gifs.populateGifs().then(function(){
-    $scope.gifs = Gifs.data.data;
-    console.log($scope.gifs.data);
+    $scope.gifs = Gifs.data;
   })
+
+  $scope.loadMoreGifs = function() {
+    Gifs.loadMoreGifs().then(function(){
+    $scope.gifs = Gifs.data;
+    $scope.$broadcast("scroll.infiniteScrollComplete");
+    })
+  }
 })
 
 .controller("TrendingCtrl", function($scope,Trending) {
   Trending.populateGifs().then(function(){
-    $scope.trendingGifs = Trending.data.data;
+    $scope.trendingGifs = Trending.data;
   })
 });

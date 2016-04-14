@@ -9,9 +9,19 @@ angular.module("gifs.services", [])
   o.populateGifs = function() {
     return $http({
       method: "GET",
-      url: "http://api.giphy.com/v1/gifs/search?q=" + o.searchTerm + "&api_key=dc6zaTOxFJmzC"
-    }).success(function(data) {
-      o.data = data;
+      url: "http://api.giphy.com/v1/gifs/search?q=" + o.searchTerm + "&limit=100&api_key=dc6zaTOxFJmzC"
+    }).success(function(responseData) {
+      console.log(responseData.data)
+      o.data = responseData.data;
+    });
+  }
+
+  o.loadMoreGifs = function() {
+    return $http({
+      method: "GET",
+      url: "http://api.giphy.com/v1/gifs/search?q=" + o.searchTerm + "&limit=100&offset=" + o.data.length + "&api_key=dc6zaTOxFJmzC"
+    }).success(function(responseData) {
+      o.data = o.data.concat(responseData.data);
     });
   }
 
@@ -26,9 +36,9 @@ angular.module("gifs.services", [])
   o.populateGifs = function() {
     return $http({
       method: "GET",
-      url: "http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC"
-    }).success(function(data) {
-      o.data = data;
+      url: "http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC"
+    }).success(function(responseData) {
+      o.data = responseData.data;
     });
   }
 
