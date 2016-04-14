@@ -15,4 +15,8 @@ angular.module("gifs.controllers", [])
   })
 })
 
-.controller("TrendingCtrl", function($scope) {});
+.controller("TrendingCtrl", function($scope,Trending) {
+  Trending.populateGifs().then(function(){
+    $scope.trendingGifs = Trending.data.data;
+  })
+});

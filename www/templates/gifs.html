@@ -1,9 +1,7 @@
 <ion-view view-title="Unicorn Gifs">
 	<ion-content>
-		<ion-list>
-			<ion-item ng-repeat="gif in gifs">
-				<img ng-src="{{ gif.images.fixed_height_small.url }}">
-			</ion-item>
-		</ion-list>
+	  <img collection-repeat="gif in gifs"
+         item-height="33%" item-width="33%"
+         ng-src="{{ gif.images.fixed_height_small.url }}">
   </ion-content>
 </ion-view>

@@ -1,0 +1,7 @@
+<ion-view view-title="Trending Gifs">
+	<ion-content>
+	  <img collection-repeat="gif in trendingGifs"
+         item-height="33%" item-width="33%"
+         ng-src="{{ gif.images.fixed_height_small.url }}">
+  </ion-content>
+</ion-view>
