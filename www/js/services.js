@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module("gifs.services", [])
 
 .factory("Gifs", function($http) {
   var o = {}
