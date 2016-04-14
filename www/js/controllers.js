@@ -8,7 +8,8 @@ angular.module("gifs.controllers", [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-.controller("GifCtrl", function($scope, Gifs) {
+.controller("GifCtrl", function($scope, $ionicModal, Gifs) {
+
   Gifs.populateGifs().then(function(){
     $scope.gifs = Gifs.data;
   })
@@ -19,6 +20,22 @@ angular.module("gifs.controllers", [])
     $scope.$broadcast("scroll.infiniteScrollComplete");
     })
   }
+
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up',
+   }).then(function(modal) {
+      $scope.modal = modal;
+   });
+  
+  $scope.openModal = function() {
+    $scope.modal.show();
+  }
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  }
+
 })
 
 .controller("TrendingCtrl", function($scope,Trending) {
