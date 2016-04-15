@@ -14,6 +14,13 @@ angular.module("gifs.controllers", [])
     $scope.gifs = Gifs.data;
   })
 
+  $scope.loadSearchedGifs = function(searchTerm) {
+    Gifs.searchTerm = searchTerm;
+    Gifs.populateGifs().then(function(){
+      $scope.gifs = Gifs.data;
+    })
+  }
+
   $scope.loadMoreGifs = function() {
     Gifs.loadMoreGifs().then(function(){
     $scope.gifs = Gifs.data;
