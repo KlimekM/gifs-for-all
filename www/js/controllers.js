@@ -1,13 +1,4 @@
 angular.module("gifs.controllers", [])
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
 .controller("GifCtrl", function($scope, $ionicModal, Gifs) {
 
   Gifs.populateGifs().then(function(){
@@ -45,11 +36,28 @@ angular.module("gifs.controllers", [])
     $scope.modal.hide();
     $scope.modal.remove();
   }
-
 })
 
-.controller("TrendingCtrl", function($scope,Trending) {
+.controller("TrendingCtrl", function($scope, $ionicModal, Trending) {
   Trending.populateGifs().then(function(){
     $scope.trendingGifs = Trending.data;
   })
+
+  $scope.showGif = function(index) {
+    $scope.currentGif = $scope.trendingGifs[index];
+    $scope.showModal('templates/modal.html');
+  }
+
+  $scope.showModal = function(templateUrl) {$ionicModal.fromTemplateUrl(templateUrl, {
+      scope: $scope
+   }).then(function(modal) {
+      $scope.modal = modal;
+      $scope.modal.show();
+   });
+  }
+  
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+    $scope.modal.remove();
+  }
 });

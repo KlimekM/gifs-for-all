@@ -2,6 +2,7 @@
 	<ion-content>
 	  <img collection-repeat="gif in trendingGifs"
          item-height="33%" item-width="33%"
-         ng-src="{{ gif.images.fixed_height_small.url }}">
+         ng-src="{{ gif.images.fixed_height_small.url }}"
+         ng-click="showGif($index)">
   </ion-content>
 </ion-view>
