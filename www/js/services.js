@@ -11,7 +11,6 @@ angular.module("gifs.services", [])
       method: "GET",
       url: "http://api.giphy.com/v1/gifs/search?q=" + o.searchTerm + "&limit=100&api_key=dc6zaTOxFJmzC"
     }).success(function(responseData) {
-      console.log(responseData.data)
       o.data = responseData.data;
     });
   }
