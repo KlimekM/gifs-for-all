@@ -3,7 +3,7 @@
 	  <img collection-repeat="gif in gifs"
          item-height="33%" item-width="33%"
          ng-src="{{ gif.images.fixed_height_small.url }}"
-         ng-click="modal.show()">
+         ng-click="showGif($index)">
   </ion-content>
    <ion-infinite-scroll
     on-infinite="loadMoreGifs()"

@@ -21,19 +21,22 @@ angular.module("gifs.controllers", [])
     })
   }
 
-  $ionicModal.fromTemplateUrl('templates/modal.html', {
-      scope: $scope,
-      animation: 'slide-in-up',
-   }).then(function(modal) {
-      $scope.modal = modal;
-   });
-  
-  $scope.openModal = function() {
-    $scope.modal.show();
+  $scope.showGif = function(index) {
+    $scope.currentGif = $scope.gifs[index];
+    $scope.showModal('templates/modal.html');
   }
 
+  $scope.showModal = function(templateUrl) {$ionicModal.fromTemplateUrl(templateUrl, {
+      scope: $scope
+   }).then(function(modal) {
+      $scope.modal = modal;
+      $scope.modal.show();
+   });
+  }
+  
   $scope.closeModal = function() {
     $scope.modal.hide();
+    $scope.modal.remove();
   }
 
 })
