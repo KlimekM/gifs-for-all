@@ -1,5 +1,10 @@
-<ion-view view-title="Unicorn Gifs">
-	<ion-content>
+<ion-view view-title="Unicorn GIFs">
+  <ion-content>
+    <form class="item item-input" ng-submit="loadSearchedGifs(searchTerm)">
+      <i class="icon ion-ios-search-strong placeholder-icon"></i>
+      <input type="search" name="search" placeholder="Search for other GIFs..." ng-model="searchTerm">
+      </input>
+    </form>
 	  <img collection-repeat="gif in gifs"
          item-height="33%" item-width="33%"
          ng-src="{{ gif.images.fixed_height_small.url }}"
