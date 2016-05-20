@@ -31,7 +31,7 @@ angular.module("gifs.controllers", [])
       $scope.modal.show();
    });
   }
-  
+
   $scope.closeModal = function() {
     $scope.modal.hide();
     $scope.modal.remove();
@@ -55,7 +55,7 @@ angular.module("gifs.controllers", [])
       $scope.modal.show();
    });
   }
-  
+
   $scope.closeModal = function() {
     $scope.modal.hide();
     $scope.modal.remove();
