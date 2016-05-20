@@ -12,11 +12,11 @@ A mobile app built using the Ionic framework which enables the development of hy
 
 ## Screenshots
 
-#### Home Page
+#### Home Page:
 ![home](images/home.png)
 
-#### Trending Gifs
+#### Trending Gifs:
 ![trending](images/trending.png)
 
-#### Modal(when an individual Gif is clicked)
+#### Modal(when an individual Gif is clicked):
 ![modal](images/modal.png)
