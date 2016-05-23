@@ -1,7 +1,7 @@
 # Gifs-for-all
 
 ## Description
-A mobile app built using the Ionic framework which enables the development of hybrid mobile apps using HTML5 and AngularJS. The app shows a user an infinite scrolling list of unicorn gifs. It also allows a user to view trending gifs and search for any gif that they would like.
+A mobile app built using the Ionic framework which enables the development of hybrid mobile apps using HTML5 and AngularJS. The app utilizes the Giphy API to show a user an infinite scrolling list of unicorn gifs. It also allows a user to view trending gifs and search for any gif that they would like.
 
 ## Getting Started
 1. Clone the repository to your local machine: <tt>git clone https://github.com/KlimekM/gifs-for-all.git</tt>
